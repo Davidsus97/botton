@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Toggle Button</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .button-box {
+      width: 220px;
+      margin: 35px auto;
+      position: relative;
+      box-shadow: 0 0 20px 9px #ff61241f;
+      border-radius: 30px;
+    }
+
+    .toggle-btn {
+      padding: 10px 30px;
+      cursor: pointer;
+      background: transparent;
+      border: 0;
+      outline: none;
+      position: relative;
+      color: black; /* Set initial text color */
+    }
+
+    .btn {
+      top: 0;
+      left: 0;
+      position: absolute;
+      width: 110px;
+      height: 100%;
+      background: linear-gradient(to right, #ff105f, #ffad06);
+      border-radius: 30px;
+      transition: .5s;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="button-box">
+    <div class="btn"></div>
+    <button type="button" class="toggle-btn" onclick="login()">Log in</button>
+    <button type="button" class="toggle-btn" onclick="register()">Register</button>
+  </div>
+
+  <script>
+    var loginButton = document.querySelector(".button-box .toggle-btn:nth-child(2)");
+    var registerButton = document.querySelector(".button-box .toggle-btn:nth-child(3)");
+
+    function register() {
+      document.querySelector(".button-box .btn").style.left = "110px";
+      loginButton.style.color = "black"; // Reset color of login button
+      registerButton.style.color = "black"; // Set color of register button to black
+    }
+
+    function login() {
+      document.querySelector(".button-box .btn").style.left = "0px";
+      registerButton.style.color = "black"; // Reset color of register button
+      loginButton.style.color = "black"; // Set color of login button to black
+    }
+  </script>
+
+</body>
+</html>
